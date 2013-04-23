@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <link href="layout.css" rel="stylesheet" type="text/css" />
+  <script src="jquery-2.0.0.min.js"></script>
+  <script>
+    function loadBookDetail() {
+      $("#bookTitle").html(window.book.getTitle());
+      $("#bookAuthor").html(window.book.getAuthor());
+      $("#bookImage").attr("src", window.book.getImageUrl());
+      $("#bookSummary").html(window.book.getSummary());
+    }
+  </script>
+</head>
+
+<body onload="loadBookDetail();">
+  <h2>图书详细信息</h2>
+  <hr />
+  <h3>书名:</h3>
+  <div id="bookTitle">--</div>
+  <div>
+    <h3>作者:</h3>
+    <div id="bookAuthor">--</div>
+    <div><img id="bookImage" src="nopicture.png" /></div>
+    <h3>简介:</h3>
+    <div id="bookSummary">--</div>
+  </div>
+</body>
+</html>

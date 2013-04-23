@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Bookly</string>
+    <string name="introduction">图书管理软件，通过扫描ISBN条形码获取图书相关信息.</string>
+    <string name="search_button">搜索图书</string>
+    <string name="return_button">返回</string>
+    <string name="add_favorite_button">收藏</string>
+    <string name="favorite_button">藏书清单</string>
+    <string name="clean_button">清空</string>
+    <string name="delete_button">删除</string>
+</resources>

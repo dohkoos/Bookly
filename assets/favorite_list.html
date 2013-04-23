@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <link href="layout.css" rel="stylesheet" type="text/css" />
+  <script src="jquery-2.0.0.min.js"></script>
+  <script>
+    function listFavorite() {
+      $("#bookList").html("");
+
+      var array = eval("(" + window.favoriteControl.getBookList() + ")");
+      for (var i = 0; i < array.length; i++) {
+        var book = array[i];
+        var bookElement = $('<li><input type="checkbox" name="isbn" '
+                + 'value="' + book.isbn
+                + '" onClick="onChooseDelete(this);" />'
+                + '<a href="#" onClick="window.favoriteControl.getBookDetail('
+                + '\'' + book.isbn + '\');">' + book.title + '</a></li>');
+        $("#bookList").append(bookElement);
+      }
+    }
+
+    function onChooseDelete(element) {
+      if (element.checked) {
+        window.favoriteControl.addDeleteItem(element.value);
+      } else {
+        window.favoriteControl.removeDeleteItem(element.value);
+      }
+    }
+  </script>
+</head>
+
+<body onload="listFavorite();">
+  <h2>收藏夹 <span id="count"></span></h2>
+  <div id="bookList" style="font-size: large"></div>
+</body>
+</html>
