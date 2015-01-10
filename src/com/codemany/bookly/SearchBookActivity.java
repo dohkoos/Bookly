@@ -123,10 +123,10 @@ public class SearchBookActivity extends Activity {
                 System.getProperty("http.agent"));
         Log.d(TAG, "Agent: " + System.getProperty("http.agent"));
 
-        HttpGet get = new HttpGet(DOUBAN_BOOK_API + isbn);
-        Log.d(TAG, "Book API: " + get.getURI().toString());
+        HttpGet request = new HttpGet(DOUBAN_BOOK_API + isbn);
+        Log.d(TAG, "Book API: " + request.getURI().toString());
 
-        HttpResponse response = client.execute(get);
+        HttpResponse response = client.execute(request);
         if (response.getStatusLine().getStatusCode() != 200) {
             throw new IllegalStateException("Status Code " + response.getStatusLine().getStatusCode());
         }

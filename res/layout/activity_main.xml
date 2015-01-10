@@ -4,20 +4,32 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/introduction" />
+        android:layout_height="wrap_content">
 
-    <Button
-        android:id="@+id/btn_search"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/search_button" />
+        <Button
+            android:id="@+id/btn_search"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/search_button" />
 
-    <Button
-        android:id="@+id/btn_favorite"
+        <Button
+            android:id="@+id/btn_clean"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/clean_button" />
+
+        <Button
+            android:id="@+id/btn_delete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/delete_button" />
+    </LinearLayout>
+
+    <WebView
+        android:id="@+id/favorite_view"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/favorite_button" />
+        android:layout_height="0dp"
+        android:layout_weight="1" />
 </LinearLayout>
