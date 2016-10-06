@@ -47,33 +47,6 @@ public class MainActivity extends Activity {
             }
         });
 
-        cleanButton = (Button)findViewById(R.id.btn_clean);
-        cleanButton.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                AlertDialog.Builder builder = new Builder(MainActivity.this);
-                builder.setTitle("警告");
-                builder.setMessage("是否真的要删除所有收藏夹条目？");
-                builder.setPositiveButton("确认",
-                        new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int which) {
-                                BookDao.getInstance().deleteAll();
-                                deleteSet.clear();
-                                favoriteView.loadUrl("javascript:listFavorite();");
-                                dialog.dismiss();
-                            }
-                        });
-                builder.setNegativeButton("取消",
-                        new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                dialog.dismiss();
-                            }
-                        });
-                builder.create().show();
-            }
-        });
-
         deleteButton = (Button)findViewById(R.id.btn_delete);
         deleteButton.setEnabled(false);
         deleteButton.setOnClickListener(new OnClickListener() {
